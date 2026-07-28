@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camila Paz Ávila — Portafolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <header class="nav">
+    <a href="#top" class="nav__brand">Camila<span class="dot">.</span></a>
+    <nav class="nav__links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#herramientas">Herramientas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__blob" aria-hidden="true"></div>
+      <div class="hero__text">
+        <p class="eyebrow">Portafolio</p>
+        <h1>Hola, soy Camila —<br>construyo cosas desde<br><span class="highlight">varios ángulos.</span></h1>
+        <p class="hero__sub">Estudiante de Ingeniería Multimedia con formación técnica en programación de software. Experiencia en desarrollo web, modelado 3D y aplicaciones con inteligencia artificial y embebidos. He participado en proyectos como detección de huecos y basuras 
+                            mediante visión computacional y página de modelado de rines en 3D incluyendo realidad 
+                            aumentada. Manejo lenguajes como Python y Java, así como herramientas como 
+                            Unity, Blender y Adobe Suite.  
+                            Interesada en aplicar mis conocimientos en una empresa donde pueda aportar soluciones 
+                            tecnológicas innovadoras. </p>
+        <a href="#proyectos" class="btn">Ver proyectos ↓</a>
+      </div>
+      <div class="stamp" aria-hidden="true">
+        <span>Ingeniería<br>Multimedia · 9°</span>
+      </div>
+      <div class="hero__board">
+        <div class="pin-card tilt-1 tag-3d">
+          <span class="pin"></span>
+          <p class="pin-card__label">Blender</p>
+          <p class="pin-card__title">Cocina de Fisher-Price y mas diseños en 3D</p>
+        </div>
+        <div class="pin-card tilt-2 tag-codigo">
+          <span class="pin"></span>
+          <p class="pin-card__label">Unity · Java</p>
+          <p class="pin-card__title">Proyecto interactivo</p>
+        </div>
+        <div class="pin-card tilt-3 tag-hardware">
+          <span class="pin"></span>
+          <p class="pin-card__label">IA y sistemas embebidos</p>
+          <p class="pin-card__title">Proyectos funcionales</p>
+        </div>
+        <div class="pin-card tilt-4 tag-hardware">
+          <span class="pin"></span>
+          <p class="pin-card__label">IA y sistemas embebidos</p>
+          <p class="pin-card__title">Proyectos funcionales</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="section">
+      <p class="section__eyebrow">01 — sobre mí</p>
+      <div class="about">
+        <p class="about__text">
+          Estoy estudiando ingeniería con un pie metido en el diseño: modelo en 3D, vectorizo en Illustrator,
+          armo prototipos en Unity y a veces también en una protoboard. Me gusta que cada proyecto de la
+          carrera termine siendo un objeto, una escena o un sistema que se puede tocar, ver o probar.
+          <span class="edit-note">— edita este texto con tu presentación real —</span>
+        </p>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num">4+</span>
+            <span class="stat__label">herramientas de trabajo</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">1</span>
+            <span class="stat__label">proyecto freelance entregado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section section--teal">
+      <p class="section__eyebrow">02 — proyectos</p>
+      <h2 class="section__title">Lo que he ido pinchando en el corcho</h2>
+
+      <div class="board-grid">
+
+        <article class="pin-card tilt-1 tag-3d">
+          <span class="pin"></span>
+          <span class="pin-card__tag">3D</span>
+          <p class="pin-card__title">Colgante retro en Blender</p>
+          <p class="pin-card__desc">Modelado de un colgante con personaje de caricatura para un cliente, con piezas separadas para engaste de piedra. Flujo: Illustrator → SVG → Blender → STL.</p>
+          <a href="#" class="pin-card__link">ver proyecto →</a>
+        </article>
+
+        <article class="pin-card tilt-2 tag-codigo">
+          <span class="pin"></span>
+          <span class="pin-card__tag">Código</span>
+          <p class="pin-card__title">Proyecto en Unity</p>
+          <p class="pin-card__desc">Reemplaza esta tarjeta con tu proyecto de Unity o Java de la carrera: de qué trata, qué problema resuelve y qué aprendiste.</p>
+          <a href="#" class="pin-card__link">ver proyecto →</a>
+        </article>
+
+        <article class="pin-card tilt-3 tag-hardware">
+          <span class="pin"></span>
+          <span class="pin-card__tag">Hardware</span>
+          <p class="pin-card__title">Circuito con Arduino</p>
+          <p class="pin-card__desc">Espacio para tu proyecto con Arduino IDE: qué construiste, qué componentes usaste y una foto o video corto del circuito funcionando.</p>
+          <a href="#" class="pin-card__link">ver proyecto →</a>
+        </article>
+
+        <article class="pin-card tilt-1 tag-redes">
+          <span class="pin"></span>
+          <span class="pin-card__tag">Redes</span>
+          <p class="pin-card__title">Simulación en Packet Tracer</p>
+          <p class="pin-card__desc">Cuenta aquí una práctica o proyecto de redes: la topología que armaste, qué protocolos configuraste y qué problema resolvía.</p>
+          <a href="#" class="pin-card__link">ver proyecto →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- HERRAMIENTAS -->
+    <section id="herramientas" class="section section--gold">
+      <p class="section__eyebrow">03 — herramientas</p>
+      <h2 class="section__title">Lo que uso para construir</h2>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="sticker sticker--coral">Blender</span>
+          <span class="sticker sticker--teal">Illustrator</span>
+          <span class="sticker sticker--gold">Unity</span>
+          <span class="sticker sticker--violet">Java</span>
+          <span class="sticker sticker--pink">Arduino IDE</span>
+          <span class="sticker sticker--coral">Packet Tracer</span>
+          <span class="sticker sticker--teal">Python</span>
+          <span class="sticker sticker--gold">MySQL</span>
+          <span class="sticker sticker--violet">WordPress</span>
+          <span class="sticker sticker--pink">Photoshop</span>
+          <!-- duplicado para el loop infinito -->
+          <span class="sticker sticker--coral" aria-hidden="true">Blender</span>
+          <span class="sticker sticker--teal" aria-hidden="true">Illustrator</span>
+          <span class="sticker sticker--gold" aria-hidden="true">Unity</span>
+          <span class="sticker sticker--violet" aria-hidden="true">Java</span>
+          <span class="sticker sticker--pink" aria-hidden="true">Arduino IDE</span>
+          <span class="sticker sticker--coral" aria-hidden="true">Packet Tracer</span>
+          <span class="sticker sticker--teal" aria-hidden="true">Python</span>
+          <span class="sticker sticker--gold" aria-hidden="true">MySQL</span>
+          <span class="sticker sticker--violet" aria-hidden="true">WordPress</span>
+          <span class="sticker sticker--pink" aria-hidden="true">Photoshop</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section--contact section--violet">
+      <p class="section__eyebrow">04 — contacto</p>
+      <h2 class="section__title">¿Hablamos de un proyecto?</h2>
+      <p class="contact__text">Escríbeme y armamos algo juntos.</p>
+      <div class="contact__links">
+        <a href="mailto:tucorreo@ejemplo.com" class="btn btn--outline">tucorreo@ejemplo.com</a>
+        <a href="https://github.com/xcamilaavila" target="_blank" rel="noopener" class="btn btn--outline">GitHub ↗</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Hecho por Camila · <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
