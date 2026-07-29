@@ -131,16 +131,11 @@ h1, h2 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; }
   margin: 0 0 6px;
 }
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.9rem);
+  font-size: 50px;
   line-height: 1.08;
   font-weight: 700;
 }
-.highlight {
-  color: var(--ink);
-  background: var(--teal-tint);
-  box-shadow: inset 0 -0.35em 0 var(--teal);
-  padding: 0 4px;
-}
+
 .hero__sub {
   max-width: 46ch;
   color: var(--ink-soft);
@@ -240,19 +235,17 @@ h1, h2 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; }
   width: 195px;
   background: var(--paper);
 }
-.hero__board .tilt-1 { top: 0; left: 8%; }
-.hero__board .tilt-2 { top: 40%; left: 48%; }
-.hero__board .tilt-3 { top: 74%; left: 2%; }
-.hero__board .tilt-4 { top: 150%; left: 2%; }
+.hero__board .tilt-1 { top: 20%; left: 8%; }
+.hero__board .tilt-2 { top: 30%; left: 50%; }
+.hero__board .tilt-3 { top: 84%; left: 2%; }
+.hero__board .tilt-4 { top: 90%; left: 48%; }
 
-.tilt-1 { transform: rotate(-5deg); }
-.tilt-2 { transform: rotate(4deg); }
-.tilt-3 { transform: rotate(-3deg); }
 
-.tag-3d .pin { background: var(--coral); }
-.tag-codigo .pin { background: var(--teal); }
-.tag-hardware .pin { background: var(--gold); }
-.tag-redes .pin { background: var(--violet); }
+.tag-3d .pin { background: var(--coral); } /*TARJETA 1*/
+.tag-codigo .pin { background: var(--teal); } /*TARJETA 2*/
+.tag-hardware .pin { background: var( --violet); } /*TARJETA 3*/
+.tag-hardware2 .pin { background: var( --pink); } /*TARJETA 4*/
+.tag-redes .pin { background: var(--pink); }
 
 /* ===== Sections ===== */
 .section {
@@ -453,4 +446,139 @@ h1, h2 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; }
   padding: 20px;
   gap: 12px;
   border-bottom: var(--border);
+}
+
+/*PROYECTOS*/
+
+/* ===== Carrusel ===== */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.carousel__track-container {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel__track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease;
+}
+.carousel__track .pin-card {
+  min-width: calc(33.333% - 16px);
+  flex-shrink: 0;
+}
+.pin-card__media {
+  position: relative;
+  width: 90%;
+  height: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+.pin-card__media:not(.mini-carousel) img,
+.pin-card__media:not(.mini-carousel) video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #ffffff;
+}
+
+.mini-track img,
+.mini-track video {
+  min-width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: #fdfcfc;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.mini-track {
+  display: flex;
+  transition: transform 0.35s ease;
+  height: 200px;
+  overflow: hidden;
+  background: #fefcfc;
+  margin: 0;
+  padding: 0;
+}
+
+
+.mini-prev, .mini-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s;
+}
+.mini-prev { left: 8px; }
+.mini-next { right: 8px; }
+.mini-prev:hover, .mini-next:hover { background: var(--coral); color: white; }
+
+.carousel__btn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: var(--border);
+  background: var(--paper);
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-hard);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.carousel__btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.carousel__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  border: none;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.carousel__dot.active {
+  opacity: 1;
+  background: var(--coral);
+  transform: scale(1.3);
+}
+@media (max-width: 860px) {
+  .carousel__track .pin-card { min-width: calc(100% - 0px); }
+  .carousel { gap: 8px; }
 }
