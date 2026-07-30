@@ -19,13 +19,14 @@ document.querySelectorAll('.nav__links a').forEach(link => {
 
 // Carrusel principal
 const carouselTrack = document.querySelector('.carousel__track');
+const carouselContainer = document.querySelector('.carousel__track-container');
 const cards = Array.from(carouselTrack.children);
 const btnPrev = document.querySelector('.carousel__btn--prev');
 const btnNext = document.querySelector('.carousel__btn--next');
 const dotsContainer = document.getElementById('carouselDots');
 
 let current = 0;
-const visible = () => window.innerWidth <= 860 ? 1 : 3;
+let translateX = 0; // guardamos el desplazamiento acumulado real
 
 cards.forEach((_, i) => {
   const dot = document.createElement('button');
@@ -37,21 +38,35 @@ cards.forEach((_, i) => {
 });
 
 function goToMain(index) {
-  const v = visible();
-  const max = cards.length - v;
+  const max = cards.length - 1;
   current = Math.max(0, Math.min(index, max));
-  const cardWidth = cards[0].offsetWidth + 24;
-  carouselTrack.style.transform = `translateX(-${current * cardWidth}px)`;
+
+  // Medimos EN PANTALLA, ahora mismo, dónde está el borde izquierdo del
+  // contenedor visible y dónde está el borde izquierdo de la tarjeta a
+  // la que queremos ir. Nos movemos exactamente esa diferencia. Como es
+  // una medición real (no una fórmula con ancho/gap asumidos), no importa
+  // si alguna tarjeta mide distinto: siempre queda perfectamente alineada.
+  const containerRect = carouselContainer.getBoundingClientRect();
+  const cardRect = cards[current].getBoundingClientRect();
+  translateX += (containerRect.left - cardRect.left);
+
+  carouselTrack.style.transform = `translateX(${translateX}px)`;
+
   document.querySelectorAll('.carousel__dot').forEach((d, i) => {
     d.classList.toggle('active', i === current);
   });
+
   btnPrev.disabled = current === 0;
   btnNext.disabled = current >= max;
 }
 
 btnPrev.addEventListener('click', () => goToMain(current - 1));
 btnNext.addEventListener('click', () => goToMain(current + 1));
-window.addEventListener('resize', () => goToMain(current));
+window.addEventListener('resize', () => {
+  translateX = 0;
+  carouselTrack.style.transform = 'translateX(0px)';
+  goToMain(current);
+});
 goToMain(0);
 
 // Mini carruseles dentro de tarjetas
@@ -62,7 +77,8 @@ document.querySelectorAll('.mini-carousel').forEach(carousel => {
 
   function goToMini(i) {
     idx = Math.max(0, Math.min(i, items.length - 1));
-    miniTrack.style.transform = `translateX(-${idx * 100}%)`;
+    const itemWidth = items[0].getBoundingClientRect().width;
+    miniTrack.style.transform = `translateX(-${idx * itemWidth}px)`;
   }
 
   carousel.querySelector('.mini-prev').addEventListener('click', e => {
@@ -81,4 +97,7 @@ document.querySelectorAll('.mini-carousel').forEach(carousel => {
     if (diff > 40) goToMini(idx + 1);
     if (diff < -40) goToMini(idx - 1);
   });
+
+  // Recalcula el ancho del slide si la ventana cambia de tamaño
+  window.addEventListener('resize', () => goToMini(idx));
 });
