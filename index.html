@@ -6,7 +6,7 @@
 <title>Camila Paz Ávila — Portafolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -69,10 +69,14 @@
       <p class="section__eyebrow">01 — sobre mí</p>
       <div class="about">
         <p class="about__text">
-          Estoy estudiando ingeniería con un pie metido en el diseño: modelo en 3D, vectorizo en Illustrator,
-          armo prototipos en Unity y a veces también en una protoboard. Me gusta que cada proyecto de la
-          carrera termine siendo un objeto, una escena o un sistema que se puede tocar, ver o probar.
-          <span class="edit-note">— edita este texto con tu presentación real —</span>
+          Estudiante de Ingeniería Multimedia (9° semestre) con formación técnica en 
+          programación de software. Experiencia en desarrollo web, modelado 3D y aplicaciones
+           con inteligencia artificial y sistemas embebidos. He participado en proyectos como 
+           detección de huecos y basura mediante visión computacional, y una aplicación web para
+            visualización de rines en 3D con realidad aumentada. Manejo lenguajes de programación
+             como Python y Java, además de HTML y CSS para desarrollo web, y herramientas como Unity,
+              Blender y Adobe Suite. Estoy interesada en aplicar mis conocimientos en una empresa donde
+               pueda aportar soluciones tecnológicas innovadoras.
         </p>
         <div class="about__stats">
           <div class="stat">
@@ -89,8 +93,8 @@
 
     <!-- PROYECTOS -->
 <section id="proyectos" class="section section--teal">
-  <p class="section__eyebrow">03 — proyectos</p>
-  <h2 class="section__title">Lo que he ido pinchando en el corcho</h2>
+  <p class="section__eyebrow">02 — proyectos</p>
+  <h2 class="section__title">Mi tablero de proyectos</h2>
 
   <div class="carousel">
     <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">&#8592;</button>
@@ -115,7 +119,7 @@
           </div>
           <span class="pin-card__tag">3D</span>
           <p class="pin-card__title">Cocina de Fisher-Price y más diseños en 3D</p>
-          <p class="pin-card__desc">Modelado en Blender de una réplica de cocina de juguete Fisher-Price, junto con otros diseños 3D del semestre.</p>
+          <p class="pin-card__desc">Modelado en Blender de una réplica de cocina de juguete Fisher-Price, junto con otros diseños 3D.</p>
         </article>
 
         <article class="pin-card tilt-2 tag-codigo">
@@ -127,8 +131,7 @@
           </div>
           <span class="pin-card__tag">Web · RA</span>
           <p class="pin-card__title">Rines en 3D con realidad aumentada</p>
-          <p class="pin-card__desc">Página web para visualizar rines modelados en 3D, con un visor de realidad aumentada integrado con HTML.</p>
-          <a href="#" class="pin-card__link">ver proyecto →</a>
+          <p class="pin-card__desc">Aplicación web desarrollada para un cliente que fabrica rines que permite visualizar dos rines en 3D y personalizarlos con los colores y efectos diamantados disponibles en la empresa con un visor de realidad aumentada integrado en HTML para ver cómo quedarían en la vida real.</p>
         </article>
 
         <article class="pin-card tilt-3 tag-hardware">
@@ -142,7 +145,6 @@
           <p class="pin-card__title">Detección de huecos y basura (Trabajo grupal) 
 
           <p class="pin-card__desc">SafeRoute es una aplicación web que permite clasificar el estado de una calle (Calle Buena, Grietas o Huecos) mediante una red neuronal CNN y detectar anomalías con un modelo YOLO.</p>
-          <a href="#" class="pin-card__link">ver proyecto →</a>
         </article>
 
       <article class="pin-card tilt-1 tag-redes">
@@ -171,43 +173,61 @@
         </div>
         <span class="pin-card__tag">IA · Embebidos</span>
         <p class="pin-card__title">Sistemas embebidos con TinyML (Proyecto grupal)</p>
-        <p class="pin-card__desc">Ttres sistemas embebidos con TinyML aplicados a terapia y asistencia. El primero reconoce gestos en el aire con un Arduino y sensores inerciales para entrenar motricidad; el segundo, R-Speech, evalúa la pronunciación de la letra "R" mediante reconocimiento de voz; el tercero, SmartVision, usa visión artificial en una Raspberry Pi para asistir a personas con discapacidad visual.</p>
-        <a href="#" class="pin-card__link">ver proyecto →</a>
+        <p class="pin-card__desc">Tres sistemas embebidos con TinyML aplicados a terapia y asistencia. El primero reconoce gestos en el aire con un Arduino y sensores inerciales para entrenar motricidad; el segundo, R-Speech, evalúa la pronunciación de la letra "R" mediante reconocimiento de voz; el tercero, SmartVision, usa visión artificial en una Raspberry Pi para asistir a personas con discapacidad visual.</p>
       </article>
 
-        <article class="pin-card tilt-2 tag-3d">
-          <span class="pin"></span>
-          <div class="pin-card__media media-contain">
+      <article class="pin-card tilt-2 tag-3d">
+        <span class="pin"></span>
+        <div class="pin-card__media mini-carousel">
+          <button class="mini-prev">&#8592;</button>
+          <div class="mini-track">
+            <video autoplay muted loop playsinline>
+              <source src="wordpress/wordpress.mp4" type="video/mp4">
+            </video>
             <video autoplay muted loop playsinline>
               <source src="bancolombia/bancolombia.mp4" type="video/mp4">
             </video>
           </div>
-          <span class="pin-card__tag">Web</span>
-          <p class="pin-card__title">Réplica página Bancolombia</p>
-          <p class="pin-card__desc">Ejercicio de clase — réplica de la página de Bancolombia hecha solo con fines educativos y de práctica.</p>
-          <a href="#" class="pin-card__link">ver proyecto →</a>
-        </article>
+          <button class="mini-next">&#8594;</button>
+        </div>
+        <span class="pin-card__tag">Web</span>
+        <p class="pin-card__title">Página web</p>
+        <p class="pin-card__desc">Proyecto de backend y e-commerce de réplica de una plataforma bancaria (solo con fines educativos y de práctica) con login y registro de usuarios en Node.js, contraseñas encriptadas con bcrypt y conexión a MySQL y Velvet Glam una tienda online en WordPress con WooCommerce, carrito de compras y cálculo dinámico de envío por zonas.</p>
+
+      </article>
 
         <article class="pin-card tilt-1 tag-hardware">
           <span class="pin"></span>
-          <div class="pin-card__media">
-            <img src="imagenes/redes.jpg" alt="Redes y servicios">
+          <div class="pin-card__media media-contain">
+            <video autoplay muted loop playsinline>
+              <source src="redes/0731.mp4" type="video/mp4">
+            </video>
           </div>
           <span class="pin-card__tag">Redes</span>
           <p class="pin-card__title">Redes y servicios</p>
-          <p class="pin-card__desc">Desde capas y protocolos (IP, TCP/UDP) hasta servicios como DNS y web, y arquitecturas de aplicaciones distribuidas.</p>
-          <a href="#" class="pin-card__link">ver proyecto →</a>
+          <p class="pin-card__desc">Servicios como DNS y web, y arquitecturas de aplicaciones distribuidas.</p>
         </article>
 
         <article class="pin-card tilt-2 tag-redes">
           <span class="pin"></span>
-          <div class="pin-card__media">
-            <img src="imagenes/adobe.jpg" alt="Trabajos en Adobe">
+          <div class="pin-card__media mini-carousel">
+            <button class="mini-prev">&#8592;</button>
+            <div class="mini-track">
+              <video autoplay muted loop playsinline>
+                <source src="unity/unity.mp4" type="video/mp4">
+              </video>
+              <video autoplay muted loop playsinline>
+                <source src="Unity/unity2.mp4" type="video/mp4">
+              </video>
+              <video autoplay muted loop playsinline>
+                <source src="Unity/piki.mp4" type="video/mp4">
+              </video>
+            </div>
+            <button class="mini-next">&#8594;</button>
           </div>
-          <span class="pin-card__tag">Diseño</span>
-          <p class="pin-card__title">Trabajos en Adobe</p>
-          <p class="pin-card__desc">Piezas hechas en After Effects, Illustrator y Photoshop — animación, vectorización y edición de imagen.</p>
-          <a href="#" class="pin-card__link">ver proyecto →</a>
+          <span class="pin-card__tag">Unity</span>
+          <p class="pin-card__title">Trabajos de unity</p>
+          <p class="pin-card__desc">Recopilación de trabajos grupales e individuales desarrollados en Unity.</p>
         </article>
 
       </div>
@@ -221,7 +241,7 @@
     <!-- HERRAMIENTAS -->
     <section id="herramientas" class="section section--gold">
       <p class="section__eyebrow">03 — herramientas</p>
-      <h2 class="section__title">Lo que uso para construir</h2>
+      <h2 class="section__title">Lo que uso para crear</h2>
       <div class="marquee">
         <div class="marquee__track">
           <span class="sticker sticker--coral">Blender</span>
@@ -251,20 +271,16 @@
 
     <!-- CONTACTO -->
     <section id="contacto" class="section section--contact section--violet">
-      <p class="section__eyebrow">04 — contacto</p>
-      <h2 class="section__title">¿Hablamos de un proyecto?</h2>
+      <h2 class="section__title">Cuéntame tu idea</h2>
       <p class="contact__text">Escríbeme y armamos algo juntos.</p>
       <div class="contact__links">
-        <a href="mailto:tucorreo@ejemplo.com" class="btn btn--outline">tucorreo@ejemplo.com</a>
+        <a href="mailto:tucorreo@ejemplo.com" class="btn btn--outline">camiavilapaz@gmail.com</a>
         <a href="https://github.com/xcamilaavila" target="_blank" rel="noopener" class="btn btn--outline">GitHub ↗</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <p>Hecho por Camila · <span id="year"></span></p>
-  </footer>
 
   <script src="script.js"></script>
 </body>

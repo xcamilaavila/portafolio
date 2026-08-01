@@ -1,5 +1,5 @@
-// Año automático en el footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Menú móvil
 const nav = document.querySelector('.nav');
