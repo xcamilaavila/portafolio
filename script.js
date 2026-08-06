@@ -63,6 +63,24 @@ function goToMain(index) {
 
 btnPrev.addEventListener('click', () => goToMain(current - 1));
 btnNext.addEventListener('click', () => goToMain(current + 1));
+
+let mainStartX = 0;
+
+carouselContainer.addEventListener("touchstart", (e) => {
+  mainStartX = e.touches[0].clientX;
+});
+
+carouselContainer.addEventListener("touchend", (e) => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = mainStartX - endX;
+
+  if (diff > 50) {
+    goToMain(current + 1);
+  } else if (diff < -50) {
+    goToMain(current - 1);
+  }
+});
+
 window.addEventListener('resize', () => {
   translateX = 0;
   carouselTrack.style.transform = 'translateX(0px)';
