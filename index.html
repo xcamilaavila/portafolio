@@ -15,7 +15,7 @@
   <div class="grain"></div>
 
   <header class="nav">
-    <a href="#top" class="nav__brand">camilastudio</span></a>
+    <a href="#top" class="nav__brand">camilastudio</a>
     <nav class="nav__links">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#proyectos">Proyectos</a>
@@ -32,15 +32,21 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero__blob" aria-hidden="true"></div>
+      <div class="hero__stars" aria-hidden="true"></div>
+      <div class="bubble bubble--hero" data-speed="0.35" aria-hidden="true"></div>
+
       <div class="hero__text">
         <p class="eyebrow">Portafolio</p>
         <h1>Hola, soy Camila <br> y transformo ideas en<br><span class="highlight">experiencias digitales.</span></h1>
         <p class="hero__sub">Estudiante de Ingeniería Multimedia enfocada en el desarrollo web, experiencias interactivas, modelado 3D e inteligencia artificial. Explora algunos de los proyectos que han marcado mi crecimiento profesional.</p>
         <a href="#proyectos" class="btn">Ver proyectos ↓</a>
       </div>
+
       <div class="stamp" aria-hidden="true">
         <span>Ingeniería<br>Multimedia · 9°</span>
       </div>
+
+      <!-- Tarjetas resumen — debajo del texto -->
       <div class="hero__board">
         <div class="pin-card tilt-1 tag-3d">
           <span class="pin"></span>
@@ -67,6 +73,8 @@
 
     <!-- SOBRE MÍ -->
     <section id="sobre-mi" class="section">
+      <div class="bubble bubble--about-1" data-speed="0.45" aria-hidden="true"></div>
+      <div class="bubble bubble--about-2" data-speed="-0.35" aria-hidden="true"></div>
       <p class="section__eyebrow">01 — sobre mí</p>
       <div class="about">
         <p class="about__text">
@@ -89,11 +97,24 @@
             <span class="stat__label">proyecto freelance entregado</span>
           </div>
         </div>
+        <div class="skills">
+          <p class="skills__label">// HABILIDADES BLANDAS</p>
+          <div class="skills__list">
+            <span class="skill-chip">Trabajo en equipo</span>
+            <span class="skill-chip">Colaboración</span>
+            <span class="skill-chip">Responsabilidad</span>
+            <span class="skill-chip">Productividad</span>
+            <span class="skill-chip">Perseverancia</span>
+            <span class="skill-chip">Empatía</span>
+            <span class="skill-chip">Organización</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- PROYECTOS -->
 <section id="proyectos" class="section section--teal">
+  <div class="bubble bubble--projects" data-speed="0.4" aria-hidden="true"></div>
   <p class="section__eyebrow">02 — proyectos</p>
   <h2 class="section__title">Mi tablero de proyectos</h2>
 
@@ -241,6 +262,7 @@
 </section>
     <!-- HERRAMIENTAS -->
     <section id="herramientas" class="section section--gold">
+      <div class="bubble bubble--tools" data-speed="-0.4" aria-hidden="true"></div>
       <p class="section__eyebrow">03 — herramientas</p>
       <h2 class="section__title">Lo que uso para crear</h2>
       <div class="marquee">
@@ -250,8 +272,7 @@
           <span class="sticker sticker--teal">After effects</span>
           <span class="sticker sticker--gold">Unity</span>
           <span class="sticker sticker--violet">Java</span>
-          <span class="sticker sticker--pink">Arduino IDE</span>
-          <span class="sticker sticker--coral">Packet Tracer</span>
+          <span class="sticker sticker--coral">Linux</span>
           <span class="sticker sticker--teal">Python</span>
           <span class="sticker sticker--gold">MySQL</span>
           <span class="sticker sticker--violet">WordPress</span>
@@ -262,8 +283,7 @@
           <span class="sticker sticker--teal" aria-hidden="true">After effects</span>
           <span class="sticker sticker--gold" aria-hidden="true">Unity</span>
           <span class="sticker sticker--violet" aria-hidden="true">Java</span>
-          <span class="sticker sticker--pink" aria-hidden="true">Arduino IDE</span>
-          <span class="sticker sticker--coral" aria-hidden="true">Packet Tracer</span>
+          <span class="sticker sticker--coral" aria-hidden="true">Linux</span>
           <span class="sticker sticker--teal" aria-hidden="true">Python</span>
           <span class="sticker sticker--gold" aria-hidden="true">MySQL</span>
           <span class="sticker sticker--violet" aria-hidden="true">WordPress</span>
@@ -274,10 +294,11 @@
 
     <!-- CONTACTO -->
     <section id="contacto" class="section section--contact section--violet">
+      <div class="bubble bubble--contact" data-speed="0.5" aria-hidden="true"></div>
       <h2 class="section__title">Contáctame</h2>
       <p class="contact__text">Escríbeme y armamos algo juntos.</p>
       <div class="contact__links">
-        <a href="mailto:tucorreo@ejemplo.com" class="btn btn--outline"> Correo:<br> camiavilapaz@gmail.com</a>
+        <a href="mailto:camiavilapaz@gmail.com" class="btn btn--outline"> Correo:<br> camiavilapaz@gmail.com</a>
         <a href="https://github.com/xcamilaavila" target="_blank" rel="noopener" class="btn btn--outline">GitHub</a>
         <a href="https://www.linkedin.com/in/camila-paz-avila-2065803b0/" target="_blank" rel="noopener" class="btn btn--outline">Linkedin</a>
       </div>
