@@ -18,75 +18,31 @@ document.querySelectorAll('.nav__links a').forEach(link => {
   });
 });
 
-// Carrusel principal
-const carouselTrack = document.querySelector('.carousel__track');
-const carouselContainer = document.querySelector('.carousel__track-container');
-const cards = Array.from(carouselTrack.children);
-const btnPrev = document.querySelector('.carousel__btn--prev');
-const btnNext = document.querySelector('.carousel__btn--next');
-const dotsContainer = document.getElementById('carouselDots');
+// Filtros de proyectos: muestra solo las tarjetas de la categoría elegida
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('#projectsGrid .pin-card');
 
-let current = 0;
-let translateX = 0; // guardamos el desplazamiento acumulado real
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
 
-cards.forEach((_, i) => {
-  const dot = document.createElement('button');
-  dot.classList.add('carousel__dot');
-  dot.setAttribute('aria-label', `Proyecto ${i + 1}`);
-  if (i === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => goToMain(i));
-  dotsContainer.appendChild(dot);
-});
+    filterButtons.forEach(b => b.classList.toggle('active', b === button));
 
-function goToMain(index) {
-  const max = cards.length - 1;
-  current = Math.max(0, Math.min(index, max));
+    projectCards.forEach(card => {
+      const categories = (card.dataset.cat || '').split(' ');
+      // Las tarjetas con data-solo (por ejemplo "freelance") no salen en "Todos":
+      // solo aparecen cuando se elige ese filtro.
+      const visible = filter === 'all'
+        ? !card.hasAttribute('data-solo')
+        : categories.includes(filter);
+      card.classList.toggle('is-hidden', !visible);
+    });
 
-  // Medimos EN PANTALLA, ahora mismo, dónde está el borde izquierdo del
-  // contenedor visible y dónde está el borde izquierdo de la tarjeta a
-  // la que queremos ir. Nos movemos exactamente esa diferencia. Como es
-  // una medición real (no una fórmula con ancho/gap asumidos), no importa
-  // si alguna tarjeta mide distinto: siempre queda perfectamente alineada.
-  const containerRect = carouselContainer.getBoundingClientRect();
-  const cardRect = cards[current].getBoundingClientRect();
-  translateX += (containerRect.left - cardRect.left);
-
-  carouselTrack.style.transform = `translateX(${translateX}px)`;
-
-  document.querySelectorAll('.carousel__dot').forEach((d, i) => {
-    d.classList.toggle('active', i === current);
+    // Los mini carruseles miden su ancho al moverse; al mostrar tarjetas
+    // de nuevo les avisamos para que recalculen.
+    window.dispatchEvent(new Event('resize'));
   });
-
-  btnPrev.disabled = current === 0;
-  btnNext.disabled = current >= max;
-}
-
-btnPrev.addEventListener('click', () => goToMain(current - 1));
-btnNext.addEventListener('click', () => goToMain(current + 1));
-
-let mainStartX = 0;
-
-carouselContainer.addEventListener("touchstart", (e) => {
-  mainStartX = e.touches[0].clientX;
 });
-
-carouselContainer.addEventListener("touchend", (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = mainStartX - endX;
-
-  if (diff > 50) {
-    goToMain(current + 1);
-  } else if (diff < -50) {
-    goToMain(current - 1);
-  }
-});
-
-window.addEventListener('resize', () => {
-  translateX = 0;
-  carouselTrack.style.transform = 'translateX(0px)';
-  goToMain(current);
-});
-goToMain(0);
 
 // Mini carruseles dentro de tarjetas
 document.querySelectorAll('.mini-carousel').forEach(carousel => {
@@ -94,6 +50,7 @@ document.querySelectorAll('.mini-carousel').forEach(carousel => {
   const items = miniTrack.querySelectorAll('img, video');
   const miniPrev = carousel.querySelector('.mini-prev');
   const miniNext = carousel.querySelector('.mini-next');
+  const miniCaption = carousel.querySelector('.mini-caption');
   let idx = 0;
 
   function goToMini(i) {
@@ -103,6 +60,9 @@ document.querySelectorAll('.mini-carousel').forEach(carousel => {
 
     miniPrev.disabled = idx === 0;
     miniNext.disabled = idx === items.length - 1;
+
+    // Pie de foto: muestra el texto data-caption de la imagen actual
+    if (miniCaption) miniCaption.textContent = items[idx].dataset.caption || '';
   }
 
   miniPrev.addEventListener('click', e => {
